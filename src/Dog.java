@@ -1,13 +1,13 @@
 public class Dog extends Tamagotchi{
-    public String asscciNormal = "                            __\n" +
+    public static String assciNormal = "                            __\n" +
             "     ,                    ,\" e`--o\n" +
             "    ((                   (  | __,'\n" +
             "     \\\\~----------------' \\_;/\n" +
-            "hjw  (                      /\n" +
+            "     (                      /\n" +
             "     /) ._______________.  )\n" +
             "    (( (               (( (\n" +
             "     ``-'               ``-'";
-    public String assciSleep = "   .-------------.       .    .   *       *   \n" +
+    public static String assciSleep = "   .-------------.       .    .   *       *   \n" +
             "  /_/_/_/_/_/_/_/ \\         *       .   )    .\n" +
             " //_/_/_/_/_/_// _ \\ __          .        .   \n" +
             "/_/_/_/_/_/_/_/|/ \\.' .`-o                    \n" +
@@ -15,18 +15,18 @@ public class Dog extends Tamagotchi{
             " |             ||  _ |                        \n" +
             " |             ||'' ||                        \n" +
             " |_____________|| |_|L";
-    public String assciEat = "     ________________\n" +
+    public static String assciEat = "     ________________\n" +
             "    '------._.------'\\\n" +
             "      \\_______________\\\n" +
             "     .'|            .'|\n" +
             "   .'_____________.' .|\n" +
             "   |              |   |\n" +
-            "   |  Scooby _.-. | . |\n" +
+            "   |     Dog _.-. | . |\n" +
             "   |  *     (_.-' |   |\n" +
             "   |    Snacks    |  .|\n" +
             "   | *          * |  .'\n" +
             "   |______________|.' ";
-    public String assciPlay = "                                   _\n" +
+    public static String assciPlay = "                                   _\n" +
             "                                (\\ \\)\n" +
             "                              o__^\\/     ,\n" +
             "                               \\ ' \\    <   _  _\n" +
@@ -34,8 +34,7 @@ public class Dog extends Tamagotchi{
             "       '      . .      ()        |        )  _   _\n" +
             "         `.'       `.'         .//---_/-_/ _  _";
 
-    public Dog(String name, int age, int mood, int energy, int hunger) {
-        super(name, age, mood, energy, hunger);
+    public Dog(String type, String name, int age, int mood, int energy, int hunger) {
+        super(type, name, age, mood, energy, hunger, Dog.assciNormal, Dog.assciSleep, Dog.assciEat, Dog.assciPlay);
     }
-
 }

@@ -1,17 +1,17 @@
 public class Cat extends Tamagotchi{
-    public String assciNormal = "           __..--''``\\--....___   _..,_\n" +
+    public static String assciNormal = "           __..--''``\\--....___   _..,_\n" +
             "       _.-'    .-/\";  `        ``<._  ``-+'~=.\n" +
             "   _.-' _..--.'_    \\                    `(^) )\n" +
             "  ((..-'    (< _     ;_..__               ; `'\n" +
             "             `-._,_)'      ``--...____..-'";
-    public String assciSleep = "      |\\      _,,,---,,_\n" +
+    public static String assciSleep = "      |\\      _,,,---,,_\n" +
             "ZZZzz /,`.-'`'    -.  ;-;;,_\n" +
             "     |,4-  ) )-,_. ,\\ (  `'-'\n" +
             "    '---''(_/--'  `-'\\_)";
-    public String assciEat = "               )\\._.,--....,'``.      \n" +
+    public static String assciEat = "               )\\._.,--....,'``.      \n" +
             " .b--.        /;   _.. \\   _\\  (`._ ,.\n" +
             "`=,-,-'~~~   `----(,_..'--(,_..'`-.;.'";
-    public String assciPlay = "                _                       \n" +
+    public static String assciPlay = "                _                       \n" +
             "                \\`*-.                   \n" +
             "                 )  _`-.                \n" +
             "                .  : `. .               \n" +
@@ -27,8 +27,7 @@ public class Cat extends Tamagotchi{
             "        [ball] .*' /  .*' ; .*`- +'  `*'\n" +
             "               `*-*   `*-*  `*-*'       \n";
 
-    public Cat(String name, int age, int mood, int energy, int hunger) {
-        super(name, age, mood, energy, hunger);
+    public Cat(String type, String name, int age, int mood, int energy, int hunger) {
+        super(type, name, age, mood, energy, hunger, Cat.assciNormal, Cat.assciSleep,Cat.assciEat,Cat.assciPlay);
     }
-
 }
