@@ -1,14 +1,10 @@
-import java.time.Instant;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import java.time.Clock;
-import java.time.Duration;
 
 public class Game {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String tamagotchiType;
+        tick();
         Tamagotchi pet;
         int action;
         pet = chooseTamagotchi();
@@ -30,11 +26,12 @@ public class Game {
 
     public static int chooseAction(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("what would you like to do? \n" +
-                "1 - eat\n" +
-                "2 - sleep\n" +
-                "3 - play\n" +
-                "4 - exit");
+        System.out.println("""
+                what would you like to do?\s
+                1 - eat
+                2 - sleep
+                3 - play
+                4 - exit""");
         return scanner.nextInt();
     }
 
@@ -62,9 +59,7 @@ public class Game {
 
     public static void tick(){
         Clock clock = Clock.systemUTC();
-        Duration tickDuration = Duration.ofSeconds(1);
-        String[] tickSplit = clock.instant().toString().split("T", 2);
-        String tick = tickSplit[1];
+        String tick = clock.instant().toString().split("T", 2)[1].split("\\.", 2)[0];
         System.out.println(tick);
     }
 }
