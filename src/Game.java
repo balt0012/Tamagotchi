@@ -1,10 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
-import java.time.Clock;
 
 public class Game {
     public static void main(String[] args) {
-        tick();
         Tamagotchi pet;
         int action;
         pet = chooseTamagotchi();
@@ -20,7 +18,6 @@ public class Game {
                 pet.play();
             }
             System.out.println(pet);
-            tick();
         } while (action != 4);
     }
 
@@ -41,9 +38,9 @@ public class Game {
         String tamagotchiType;
         Tamagotchi pet = new Tamagotchi("","",0,0,0,0,"","","","");
         do {
-            System.out.println("do you want a cat or a dog?");
+            System.out.println("do you want a cat,dog,goat?");
             tamagotchiType = scanner.nextLine();
-        } while(!tamagotchiType.equals("dog") && !tamagotchiType.equals("cat"));
+        } while(!tamagotchiType.equals("dog") && !tamagotchiType.equals("cat") && !tamagotchiType.equals("goat"));
         System.out.println("what would you like to name your new " + tamagotchiType);
         String name = scanner.nextLine();
         if (tamagotchiType.equals("cat")){
@@ -54,12 +51,10 @@ public class Game {
             pet = new Dog("dog", name,0, random.nextInt(10)+1, random.nextInt(10)+1, random.nextInt(10)+1);
             return pet;
         }
+        else if (tamagotchiType.equals("goat")) {
+            pet = new Goat("goat", name,0, random.nextInt(10)+1, random.nextInt(10)+1, random.nextInt(10)+1);
+            return pet;
+        }
         return pet;
-    }
-
-    public static void tick(){
-        Clock clock = Clock.systemUTC();
-        String tick = clock.instant().toString().split("T", 2)[1].split("\\.", 2)[0];
-        System.out.println(tick);
     }
 }

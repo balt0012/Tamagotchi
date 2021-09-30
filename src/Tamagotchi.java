@@ -26,7 +26,8 @@ public class Tamagotchi {
     @Override
     public String toString() {
         return "Tamagotchi{" +
-                "name='" + name + '\'' +
+                "type='" + type + '\'' +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 ", mood=" + mood +
                 ", energy=" + energy +

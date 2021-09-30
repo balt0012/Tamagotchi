@@ -41,4 +41,14 @@ public class Dog extends Tamagotchi{
     public Dog(String type, String name, int age, int mood, int energy, int hunger) {
         super(type, name, age, mood, energy, hunger, Dog.assciNormal, Dog.assciSleep, Dog.assciEat, Dog.assciPlay);
     }
+    @Override
+    public void sleep(){
+        this.energy += 5;
+        this.hunger += 4;
+        if (this.energy > 10){
+            this.energy = 10;
+        }
+        System.out.println(this.assciSleep);
+        System.out.println(this.name + " is going to sleep for a while");
+    }
 }
